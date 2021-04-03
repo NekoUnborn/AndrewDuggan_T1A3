@@ -1,4 +1,4 @@
-def log_in_module
+def login_module
   require 'csv'
   require_relative './validate_input'
 
@@ -16,7 +16,6 @@ def log_in_module
     CSV.open("./saved_data/users.csv", "a+") do |csv|
       csv.each do |line|
         return line if line[0] == username
-        p line
 
         return !line if line[0] != username
       end
