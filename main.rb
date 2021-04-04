@@ -4,8 +4,10 @@ require_relative "./modules/questions"
 require_relative "./modules/redo_questions"
 require_relative "./modules/submit"
 
-login_module # program will continue after logged in
+# Hello
+# login_module # program will continue after logged in
+# login
 
 #menu
 
-questions
+questions #loop back to menu once complete
