@@ -1,35 +1,20 @@
-def login_module
+def login
   require 'csv'
+  require 'tty-prompt'
   require_relative './validate_input'
+  require_relative '../methods/login_methods'
 
-  quit = false
-  users = CSV.open("./saved_data/users.csv", "a+")
+  begin
+    users = CSV.parse(File.open("./saved_data/users.csv"))
+    quit = false
+  rescue StandardError
+    puts "users.csv file is corrupt, please install again"
+    quit = true
+  end
   user = {}
 
-  def get_login_details
-    username = validate_input("username", "your username")
-    password = validate_input("password", "a password")
-    [username, password]
-  end
-
-  def find_user(username)
-    CSV.open("./saved_data/users.csv", "a+") do |csv|
-      csv.each do |line|
-        return line if line[0] == username
-
-        return !line if line[0] != username
-      end
-    end
-  end
-
-  def append_csv(username, password)
-    CSV.open("./saved_data/users.csv", "a") do |csv|
-      csv << [username, password]
-    end
-  end
-
   until (user != {}) || quit
-    system "clear"
+    # system "clear"
     puts "what would you like to do?"
     puts "options: [login, signup, quit]"
     input = gets.chomp
@@ -39,7 +24,7 @@ def login_module
       # login
     when "login"
       username, password = get_login_details
-      line = find_user(username)
+      line = find_user(username, users)
       if line
         if line[1] == password
           user[:username] = username
@@ -52,27 +37,29 @@ def login_module
         puts "Username does not exist, sign up"
       end
 
-      # signup
+    # signup
     when "signup"
       username, password = get_login_details
-      username_taken = find_user(username)
+      username_taken = find_user(username, users)
       if username_taken
         puts "Username is taken"
       else
-        append_csv(username, password)
+        CSV.open("./saved_data/users.csv", "a+") do |csv|
+          csv << [username,password]
+        end
         user[:username] = username
         user[:password] = password
         puts "New login created"
       end
 
-      # quit
+    # quit
     when "quit"
       quit = true
 
-    else
-      puts "Incorrect option"
     end
 
     sleep 3
   end
+
+  return user[:username]
 end

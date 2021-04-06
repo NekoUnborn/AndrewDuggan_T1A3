@@ -2,18 +2,7 @@ def questions
   contact = false
   supported = true
 
-  def contact
-    if answer == "y"
-      contact = true
-    end
-  end
-
-  def support(answer)
-    if answer == "y"
-    supported = false
-    end
-  end
-
+  questions = csv.parse(file.open("../saved_data/questions.csv"))
   hash = { :h => nil }
   p hash
   if hash[:h].!nil

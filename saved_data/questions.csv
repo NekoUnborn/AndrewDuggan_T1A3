@@ -1,0 +1,10 @@
+set,question,method
+critical,Does your young person have an NDIS Plan? (y/n),contactn(answer)
+critical,Does your young person have a Positive Behaviour Support Plan? (y/n),nil
+critical,Does your young person have chemical restraint in their plan? (y/n),nil
+critical,Does your young person have environmental restraint in their plan? (y/n),nil
+critical,Does your young person have mechanical restraint in their plan? (y/n),nil
+critical,Does your young person have physical restraint in their plan? (y/n),nil
+critical,Does your young person have seclusion in their plan? (y/n),supporty(answer)
+critical,Does your young person take regular medication? (webster pack required) (y/n),contacty(answer)
+critical,Does your young person take PRN or ‘as required’ medication? (y/n),contacty(answer)
