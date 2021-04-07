@@ -4,6 +4,8 @@ def login
   require_relative './validate_input'
   require_relative '../methods/login_methods'
 
+  prompt = TTY::Prompt.new
+
   begin
     users = CSV.parse(File.open("./saved_data/users.csv"))
     quit = false
@@ -11,13 +13,12 @@ def login
     puts "users.csv file is corrupt, please install again"
     quit = true
   end
+
   user = {}
 
   until (user != {}) || quit
-    # system "clear"
-    puts "what would you like to do?"
-    puts "options: [login, signup, quit]"
-    input = gets.chomp
+    system "clear"
+    input = prompt.select("what would you like to do?", %w(login signup quit))
 
     case input
 
@@ -25,6 +26,7 @@ def login
     when "login"
       username, password = get_login_details
       line = find_user(username, users)
+      p line
       if line
         if line[1] == password
           user[:username] = username
