@@ -4,6 +4,18 @@ def get_user_details
   [username, password]
 end
 
+def validate_input(variable, message)
+  input = ""
+  while input == ""
+    print "#{variable}: "
+    input = gets.chomp
+    if input == ""
+      puts "You must enter #{message}"
+    end
+  end
+  return input
+end
+
 def find_user(username, users)
   users.each do |line|
     return line if line[0] == username

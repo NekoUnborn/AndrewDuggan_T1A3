@@ -1,47 +1,46 @@
-set,question,method
-critical,Does your young person have an NDIS Plan? (y/n),module(:contact(answer, "y"))
+critical,Will the service be funded outside of an NDIS plan? (y/n),contact
 critical,Does your young person have a Positive Behaviour Support Plan? (y/n),nil
 critical,Does your young person have chemical restraint in their plan? (y/n),nil
 critical,Does your young person have environmental restraint in their plan? (y/n),nil
 critical,Does your young person have mechanical restraint in their plan? (y/n),nil
 critical,Does your young person have physical restraint in their plan? (y/n),nil
-critical,Does your young person have seclusion in their plan? (y/n),module(:support(answer, "y"))
-critical,Does your young person take regular medication? (webster pack required) (y/n),module(:contact(answer, "y"))
-critical,Does your young person take PRN or ‘as required’ medication? (y/n),module(:contact(answer, "y"))
-high_intensity, Does your young person require Complex Bowel care? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Enteral (PEG) Feeding? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Tracheostomy care? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Urinary Catheters? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Ventilation? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Subcutaneous Injections? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Diabetes Management? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Wound Care? (y/n),module(:support(answer, "y"))
-high_intensity, Does your young person require Stoma Care? (y/n),module(:support(answer, "y"))
+critical,Does your young person have seclusion in their plan? (y/n),support
+critical,Does your young person take regular medication? (webster pack required) (y/n),contact
+critical,Does your young person take PRN or ‘as required’ medication? (y/n),contact
+high_intensity, Does your young person require Complex Bowel care? (y/n),support
+high_intensity, Does your young person require Enteral (PEG) Feeding? (y/n),support
+high_intensity, Does your young person require Tracheostomy care? (y/n),support
+high_intensity, Does your young person require Urinary Catheters? (y/n),support
+high_intensity, Does your young person require Ventilation? (y/n),support
+high_intensity, Does your young person require Subcutaneous Injections? (y/n),support
+high_intensity, Does your young person require Diabetes Management? (y/n),support
+high_intensity, Does your young person require Wound Care? (y/n),support
+high_intensity, Does your young person require Stoma Care? (y/n),support
 high_intensity, Does your young person need assistance from a Community Nurse? (details/n),nil
-behave_of_concern, Is your young person currently (or within the last 4 weeks) been placed on or is at risk of Suicide? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to physically assault others or things? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to verbally assault others or things? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to exhibit sexualised behaviour towards others or things? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to jerking or unpredictable movements? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to bite or lick others or things? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Is your young person known to perform self-stimulating/soothing behaviours (e.g. rocking, flapping, making noises etc)? (y/n),module(:contact(answer, "y"))
+behave_of_concern, Is your young person currently (or within the last 4 weeks) been placed on or is at risk of Suicide? (y/n),contact
+behave_of_concern,Is your young person known to physically assault others or things? (y/n),contact
+behave_of_concern,Is your young person known to verbally assault others or things? (y/n),contact
+behave_of_concern,Is your young person known to exhibit sexualised behaviour towards others or things? (y/n),contact
+behave_of_concern,Is your young person known to jerking or unpredictable movements? (y/n),contact
+behave_of_concern,Is your young person known to bite or lick others or things? (y/n),contact
+behave_of_concern,Is your young person known to perform self-stimulating/soothing behaviours (e.g. rocking, flapping, making noises etc)? (y/n),contact
 behave_of_concern,Does your young person have any sensory needs (or avoidance)?
 behave_of_concern,Is your young person have any eating concerns (e.g. binge eating, over eating)?
-behave_of_concern,Does your young person have Dysphagia (e.g. choking or eating at mealtimes) (y/n),module(:support(answer, "y"))
+behave_of_concern,Does your young person have Dysphagia (e.g. choking or eating at mealtimes) (y/n),support
 behave_of_concern,Does your young person have any fractures? (y/n),nil
 behave_of_concern,Does your young person have existing cuts, bruising or abrasions? (y/n),nil
-behave_of_concern,Does your young person have Seizures or Epilepsy (y/n),module(:contact(answer, "y"))
-behave_of_concern,Does your young person have Asthma (y/n),module(:contact(answer, "y"))
-behave_of_concern,Does your young person have Respiratory Conditions? (y/n),module(:contact(answer, "y"))
-behave_of_concern,Does your young person have Allergies/Anaphylaxis? (y/n),module(:contact(answer, "y"))
+behave_of_concern,Does your young person have Seizures or Epilepsy (y/n),contact
+behave_of_concern,Does your young person have Asthma (y/n),contact
+behave_of_concern,Does your young person have Respiratory Conditions? (y/n),contact
+behave_of_concern,Does your young person have Allergies/Anaphylaxis? (y/n),contact
 behave_of_concern,Does your young person have endocrine conditions?,nil
-behave_of_concern,Does your young person have diabetes? (y/n),module(:contact(answer, "y"))
+behave_of_concern,Does your young person have diabetes? (y/n),contact
 behave_of_concern,Does your young person have Problems sleeping? (y/n),nil
 behave_of_concern,Does your young person have incontinence? (y/n),nil
 behave_of_concern,Does your young person have other conditions? (free text),nil
 communication,Does your young person require any assistance to communicate? (list/n),nil
 communication,Does your young person need a communication Aid? (list/n),nil
-communication,Does your young person have a communication plan? (y/n),module(:contact(answer, "y"))
+communication,Does your young person have a communication plan? (y/n),contact
 move_mobility,Does your young person have any difficulties with Vision or Hearing? (describe/n),nil
 move_mobility,Does your young person have any difficulties moving on rough or uneven ground? (describe/n),nil
-move_mobility,Does your young persona require any aids, eg. Glasses, walking frame, wheelchair, orthotics, splints, helmets? (y/n),module(:contact(answer, "y"))
+move_mobility,Does your young persona require any support aids? (y/n),contact

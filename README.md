@@ -55,9 +55,8 @@ Any errors will display in an easy-to-understand format for three seconds, then 
 ### An overall menu system
 After the user is logged in, there will be a menu system for the various features, with the instructions in the menu:
 1. Start behaviour questionairre
-2. Edit question group
-3. Submit
-4. Exit without submitting
+2. Submit
+3. Exit without submitting
 Any errors will display in an easy-to-understand format for three seconds, then loop back to the menu.
 
 ### 1. A questionnaire that will save the risks associated with a participant for care in a separate file
@@ -66,13 +65,7 @@ The questions are mostly a y/n menu with expanding questions for more detail if 
 The explanation of the needed answer format will be with the question in square brackets.
 Any errors will display in an easy-to-understand format for three seconds, then loop back to the question.
 
-### 2. The ability to display previous care area questions and answer them if there are any changes
-When the user chooses this option, the list of care areas will be displayed as a menu and they can choose the care area they wish to change.
-The app will then re-ask the questions and the user will have another chance to answer them.
-The instructions will be displayed before the menu option.
-Any errors will display in an easy-to-understand format for three seconds, then loop back to the care area menu.
- 
-### 3. Displaying the result to the user and if the provider has a position for the participant.
+### 2. Displaying the result to the user and if the provider has a position for the participant.
 When the user selects 'Submit', the overall risk will be calculated behind the scenes and will be associated with a list of values when the user submits. The instructions will be with the menu and there will be a confirmation question before this feature is implemented.
 If the score of any care area is higher than the provider is scoped for, the user will receive "Please contact us to see if we fit with your participant’s needs"
 If there are no high scores, the user will receive "Please contact us to book an entry interview"

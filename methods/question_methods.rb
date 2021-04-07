@@ -1,9 +1,7 @@
-def contact(answer, variable)
-  if answer == variable
-    contact = false
-  end
+def contact(answer)
+  return true if answer == "y"
 end
 
-def support(answer, variable)
-  return !supported if answer == variable
+def support(answer)
+  return false if answer == "y"
 end

@@ -1,0 +1,3 @@
+critical,Will the service be funded outside of an NDIS plan? (y/n),y,contact
+critical,Does your young person have a Positive Behaviour Support Plan? (y/n),n,nil
+critical,Does your young person have chemical restraint in their plan? (y/n),y,nil
