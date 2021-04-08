@@ -1,28 +1,46 @@
-high_intensity, Does your young person need assistance from a Community Nurse? (details/n),y,nil
-behave_of_concern, Is your young person currently (or within the last 4 weeks) been placed on or is at risk of Suicide? (y/n),y,contact
-behave_of_concern,Is your young person known to physically assault others or things? (y/n),y,contact
-behave_of_concern,Is your young person known to verbally assault others or things? (y/n),y,contact
-behave_of_concern,Is your young person known to exhibit sexualised behaviour towards others or things? (y/n),y,contact
-behave_of_concern,Is your young person known to jerking or unpredictable movements? (y/n),y,contact
-behave_of_concern,Is your young person known to bite or lick others or things? (y/n),y,contact
+critical,Will the service be funded outside of an NDIS plan?,y,contact
+critical,Does your young person have a Positive Behaviour Support Plan?,y,nil
+critical,Does your young person have chemical restraint in their plan?,y,nil
+critical,Does your young person have environmental restraint in their plan?,y,nil
+critical,Does your young person have mechanical restraint in their plan?,y,nil
+critical,Does your young person have physical restraint in their plan?,y,nil
+critical,Does your young person have seclusion in their plan?,y,support
+critical,Does your young person take regular medication? (webster pack required),y,contact
+critical,Does your young person take PRN or ‘as required’ medication?,y,contact
+high_intensity, Does your young person require Complex Bowel care?,y,support
+high_intensity, Does your young person require Enteral (PEG) Feeding?,y,support
+high_intensity, Does your young person require Tracheostomy care?,y,support
+high_intensity, Does your young person require Urinary Catheters?,y,support
+high_intensity, Does your young person require Ventilation?,y,support
+high_intensity, Does your young person require Subcutaneous Injections?,y,support
+high_intensity, Does your young person require Diabetes Management?,y,support
+high_intensity, Does your young person require Wound Care?,y,support
+high_intensity, Does your young person require Stoma Care?,y,support
+high_intensity, Does your young person need assistance from a Community Nurse?,y,nil
+behave_of_concern, Is your young person currently (or within the last 4 weeks) been placed on or is at risk of Suicide?,y,contact
+behave_of_concern,Is your young person known to physically assault others or things?,y,contact
+behave_of_concern,Is your young person known to verbally assault others or things?,y,contact
+behave_of_concern,Is your young person known to exhibit sexualised behaviour towards others or things?,y,contact
+behave_of_concern,Is your young person known to jerking or unpredictable movements?,y,contact
+behave_of_concern,Is your young person known to bite or lick others or things?,y,contact
 behave_of_concern,Is your young person known to perform self-stimulating/soothing behaviours (e.g. rocking,y, flapping
-behave_of_concern,Does your young person have any sensory needs (or avoidance)?,y,
-behave_of_concern,Is your young person have any eating concerns (e.g. binge eating,y, over eating)?
-behave_of_concern,Does your young person have Dysphagia (e.g. choking or eating at mealtimes) (y/n),y,support
-behave_of_concern,Does your young person have any fractures? (y/n),y,nil
-behave_of_concern,Does your young person have existing cuts,y, bruising or abrasions? (y/n)
-behave_of_concern,Does your young person have Seizures or Epilepsy (y/n),y,contact
-behave_of_concern,Does your young person have Asthma (y/n),y,contact
-behave_of_concern,Does your young person have Respiratory Conditions? (y/n),y,contact
-behave_of_concern,Does your young person have Allergies/Anaphylaxis? (y/n),y,contact
+behave_of_concern,Does your young person have any sensory needs (or avoidance)?,y,nil
+behave_of_concern,Does your young person have any eating concerns (e.g. binge eating,y, over eating)?
+behave_of_concern,Does your young person have Dysphagia (e.g. choking or eating at mealtimes),y,support
+behave_of_concern,Does your young person have any fractures?,y,nil
+behave_of_concern,Does your young person have existing cuts,y, bruising or abrasions?
+behave_of_concern,Does your young person have Seizures or Epilepsy,y,contact
+behave_of_concern,Does your young person have Asthma,y,contact
+behave_of_concern,Does your young person have Respiratory Conditions?,y,contact
+behave_of_concern,Does your young person have Allergies/Anaphylaxis?,y,contact
 behave_of_concern,Does your young person have endocrine conditions?,y,nil
-behave_of_concern,Does your young person have diabetes? (y/n),y,contact
-behave_of_concern,Does your young person have Problems sleeping? (y/n),y,nil
-behave_of_concern,Does your young person have incontinence? (y/n),y,nil
-behave_of_concern,Does your young person have other conditions? (free text),y,nil
-communication,Does your young person require any assistance to communicate? (list/n),y,nil
-communication,Does your young person need a communication Aid? (list/n),y,nil
-communication,Does your young person have a communication plan? (y/n),y,contact
-move_mobility,Does your young person have any difficulties with Vision or Hearing? (describe/n),y,nil
-move_mobility,Does your young person have any difficulties moving on rough or uneven ground? (describe/n),y,nil
-move_mobility,Does your young persona require any support aids? (y/n),y,contact
+behave_of_concern,Does your young person have diabetes?,y,contact
+behave_of_concern,Does your young person have Problems sleeping?,y,nil
+behave_of_concern,Does your young person have incontinence?,y,nil
+behave_of_concern,Does your young person have other conditions?,y,nil
+communication,Does your young person require any assistance to communicate?,y,nil
+communication,Does your young person need a communication Aid?,y,nil
+communication,Does your young person have a communication plan?,y,contact
+move_mobility,Does your young person have any difficulties with Vision or Hearing?,y,nil
+move_mobility,Does your young person have any difficulties moving on rough or uneven ground?,y,nil
+move_mobility,Does your young persona require any support aids?,y,contact

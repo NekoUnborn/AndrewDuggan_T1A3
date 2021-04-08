@@ -5,4 +5,6 @@ require_relative "./modules/questions"
 require_relative "./modules/redo_questions"
 require_relative "./modules/submit"
 
-questions("Me")
+contact, support = questions("Andrew")
+p contact
+p support

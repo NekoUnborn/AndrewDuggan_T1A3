@@ -1,7 +1,8 @@
 def login
   require 'csv'
   require 'tty-prompt'
-  require_relative '../methods/login_methods'
+  require_relative './validate_input'
+  require_relative '../methods/user_methods'
 
   prompt = TTY::Prompt.new
 
@@ -12,11 +13,10 @@ def login
     puts "users.csv file is corrupt, please install again"
     quit = true
   end
-
   user = {}
 
   until (user != {}) || quit
-    system "clear"
+    # system "clear"
     input = prompt.select("what would you like to do?", %w(login signup quit))
 
     case input
@@ -36,7 +36,6 @@ def login
       else
         puts "Username does not exist, sign up"
       end
-      sleep 3
 
     # signup
     when "signup"
@@ -48,11 +47,8 @@ def login
         CSV.open("./saved_data/users.csv", "a+") do |csv|
           csv << [username,password]
         end
-        user[:username] = username
-        user[:password] = password
         puts "New login created"
       end
-      sleep 3
 
     # quit
     when "quit"
@@ -60,7 +56,8 @@ def login
 
     end
 
+    sleep 3
   end
 
-  [user[:username], quit]
+  [username, quit]
 end
