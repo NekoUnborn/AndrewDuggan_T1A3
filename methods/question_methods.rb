@@ -1,15 +1,11 @@
-def if_contact(answer)
-  return true if answer.downcase == "y"
-end
-
-def if_support(answer)
-  return false if answer.downcase == "y"
-end
-
 def check_contact(answer, contact)
-  if_contact(answer) unless contact
+  return true if contact || (answer == "y")
+
+  false
 end
 
 def check_support(answer, support)
-  if_support(answer) if support
+  return false if !support || (answer == "y")
+
+  true
 end

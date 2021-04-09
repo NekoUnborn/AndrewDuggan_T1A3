@@ -26,10 +26,8 @@ def questions(username)
     case method
     when "contact"
       contact = check_contact(answer, contact)
-      p "#{contact} contact"
     when "support"
       support = check_support(answer, support)
-      p "#{support} support"
     end
     CSV.open("./saved_data/#{user}_answers.csv", "a+") do |csv|
       csv << [category, question, method, answer]
