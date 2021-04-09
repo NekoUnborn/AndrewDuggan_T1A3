@@ -18,7 +18,7 @@ def questions(username)
     quit
   end
 
-  questions.each do |cat, quest, meth, ans|
+  questions.each do |cat, quest, meth|
     category = cat
     question = quest
     answer = prompt.select("#{category}: #{question}", %w(y n))

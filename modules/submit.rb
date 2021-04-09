@@ -46,6 +46,6 @@ def submit(username)
     end
 
   else
-    quit = true
+    quit
   end
 end
