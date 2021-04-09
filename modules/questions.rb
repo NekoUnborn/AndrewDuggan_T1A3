@@ -10,7 +10,6 @@ def questions(username)
   quit = false
   prompt = TTY::Prompt.new
 
-  puts "welcome to the questions module"
   begin
     questions = CSV.parse(File.open("./saved_data/questions.csv"))
     !quit
@@ -19,27 +18,27 @@ def questions(username)
     quit
   end
 
-  questions.each do |cat, quest, meth|
+  questions.each do |cat, quest, meth, ans|
     category = cat
     question = quest
     answer = prompt.select("#{category}: #{question}", %w(y n))
     method = meth
     case method
     when "contact"
-      if !contact
-        contact = contact(answer)
-      end
+      check_contact
     when "support"
-      if support
-        support = support(answer)
-      end
+      check_support
     end
     CSV.open("./saved_data/#{user}_answer.csv", "a+") do |csv|
-      csv << [category, question, answer, method]
+      csv << [category, question, method, answer]
     end
+  end
+
+  CSV.open("./saved_data/#{user}_states.csv", "w+") do |csv|
+    csv << [contact,support]
   end
 
   sleep 2
   system "clear"
-  [contact, support]
+
 end

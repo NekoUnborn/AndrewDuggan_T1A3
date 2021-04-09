@@ -2,12 +2,26 @@ GEM
   remote: https://rubygems.org/
   specs:
     colorize (0.8.1)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
-    mini_mime (1.0.3)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    mailgun-ruby (1.2.4)
+      rest-client (>= 2.0.2)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2021.0225)
+    netrc (0.11.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
     power_assert (2.0.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    stripe (5.32.1)
     test-unit (3.4.0)
       power_assert
     tty-color (0.6.0)
@@ -20,6 +34,9 @@ GEM
       tty-screen (~> 0.8)
       wisper (~> 2.0)
     tty-screen (0.8.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.7)
     wisper (2.0.1)
 
 PLATFORMS
@@ -27,7 +44,8 @@ PLATFORMS
 
 DEPENDENCIES
   colorize (~> 0.8.1)
-  mail (~> 2.7)
+  mailgun-ruby (~> 1.2)
+  stripe (~> 5.32)
   test-unit (~> 3.4)
   tty-prompt (~> 0.23.0)
 

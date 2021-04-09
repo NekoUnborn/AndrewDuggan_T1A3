@@ -1,29 +1,32 @@
-def submit(user, _contact, _support)
+def submit(username)
   require 'csv'
   require 'tty-prompt'
-  require 'mail'
   require_relative '../methods/user_methods'
   require_relative './validate_input'
 
   prompt = TTY::Prompt.new
 
-  quit = prompt.select("Are you sure you wish to submit?", %w[yes no])
+  submit = prompt.select("Are you sure you wish to submit?", %w[yes no])
 
-  email = validate_input
-  mail = Mail.new do
-    from    'emailtesting42'
-    to      'you@test.lindsaar.net'
-    subject 'This is a test email'
-    body    File.read('body.txt')
+    #loads the states from the user_states.csv file
+  states = CSV.parse(File.read("./saved_data/#{username}_states.csv"))
+  contact = states[0][0]
+  support = states[0][1]
+
+  if submit == "yes"
+    if support
+      puts "Please contact us to organise a date for the initial interview"
+    else
+      puts "We apologise, your needs are outside of the scope of our NDIS registration"
+      puts "Please contact us to discuss your situation further" if contact
+    end
+
+    # get the user's email address
+    email = validate_input("Your email address, please", "an email address")
+
+
+
+  else
+    quit = true
   end
-
-  mail.to_s #=> "From: mikel@test.lindsaar.net\r\nTo: you@...
-
-  @mail = Mail.new
-  @mail.add_file("../saved_data/#{user}_answer.csv")
-  @mail.parts.first.attachment? #=> true
-  @mail.parts.first.content_transfer_encoding.to_s #=> 'base64'
-  @mail.attachments.first.mime_type #=> 'image/jpg'
-  @mail.attachments.first.filename #=> 'file.jpg'
-  @mail.attachments.first.decoded == File.read("../saved_data/#{user}_answer.csv") #=> true
 end

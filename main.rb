@@ -11,25 +11,30 @@ quit = false
 user, quit = login
 prompt = TTY::Prompt.new
 
-while user || !quit
-  #menu
-  input = prompt.select("what would you like to do?", %w(questions submit quit))
+until quit
+  # Ruby function to check if file existensts
+  input = if File.exist?("./saved_data/#{user}_answer.csv")
+            prompt.select("what would you like to do?", %w[re-answer submit quit])
+          else
+            prompt.select("what would you like to do?", %w[questions quit])
+          end
+  # menu
 
   case input
   # questions(username) #loop back to menu once complete
   when "questions"
-  contact, support = questions(user)
+    contact, support = questions(user)
 
-  # redo_questions(username)
-  # when reanswer
-    # redo_questions
+  when "re-answer"
+    redo_questions(username)
 
   # submit
   when "submit"
-    submit(user, contact, support)
+    submit(user)
 
   # quit
   when "quit"
     quit = true
+    break
   end
 end
