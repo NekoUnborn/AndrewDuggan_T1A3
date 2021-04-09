@@ -6,10 +6,14 @@ def support(answer)
   return false if answer.downcase == "y"
 end
 
-def check_contact
-  contact ||= contact(answer)
+def check_contact(answer)
+if !contact
+  contact(answer)
+end
 end
 
-def check_support
-  support = support(answer) if support
+def check_support(answer)
+if support
+  support(answer)
+end
 end

@@ -15,7 +15,7 @@ def redo_questions(username)
     user_file = CSV.parse(File.open("./saved_data/#{user}_answers.csv"))
     !quit
   rescue StandardError
-    puts "#{user}_answers.csv file is corrupt, please install again"
+    puts "#{user}_answers.csv file is corrupt, please install again".colorize(:red)
     quit
   end
 
@@ -33,9 +33,9 @@ def redo_questions(username)
     end
     case method
     when "contact"
-      check_contact
+      contact = check_contact(answer)
     when "support"
-      check_support
+      support = check_support(answer)
     end
 
     CSV.open("./saved_data/#{user}_answer.csv", "a+") do |csv|

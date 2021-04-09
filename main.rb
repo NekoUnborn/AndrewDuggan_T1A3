@@ -6,8 +6,13 @@ require_relative "./modules/questions"
 # require_relative "./modules/redo_questions"
 require_relative "./modules/submit"
 
+# ARGV's are an array
+if ARGV.include?("--help")
+  puts "README.md"
+  exit
+end
+
 # login_module # program will continue after logged in
-quit = false
 user, quit = login
 prompt = TTY::Prompt.new
 
@@ -23,10 +28,10 @@ until quit
   case input
   # questions(username) #loop back to menu once complete
   when "questions"
-    contact, support = questions(user)
+    questions(user)
 
   when "re-answer"
-    redo_questions(username)
+    redo_questions(user)
 
   # submit
   when "submit"

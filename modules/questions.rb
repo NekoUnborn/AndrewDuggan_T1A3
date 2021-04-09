@@ -14,7 +14,7 @@ def questions(username)
     questions = CSV.parse(File.open("./saved_data/questions.csv"))
     !quit
   rescue StandardError
-    puts "questions.csv file is corrupt, please install again"
+    puts "questions.csv file is corrupt, please install again".colorize(:red)
     quit
   end
 
@@ -25,9 +25,9 @@ def questions(username)
     method = meth
     case method
     when "contact"
-      check_contact
+      contact = check_contact
     when "support"
-      check_support
+      support = check_support
     end
     CSV.open("./saved_data/#{user}_answer.csv", "a+") do |csv|
       csv << [category, question, method, answer]
