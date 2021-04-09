@@ -1,7 +1,7 @@
 def login
   require 'csv'
   require 'tty-prompt'
-  require_relative './validate_input'
+  require_relative '../methods/validate_input'
   require_relative '../methods/user_methods'
 
   prompt = TTY::Prompt.new
@@ -17,7 +17,7 @@ def login
 
   until (user != {}) || quit
     # system "clear"
-    input = prompt.select("what would you like to do?", %w(login signup quit))
+    input = prompt.select("what would you like to do?", %w[login signup quit])
 
     case input
 
@@ -45,7 +45,7 @@ def login
         puts "Username is taken"
       else
         CSV.open("./saved_data/users.csv", "a+") do |csv|
-          csv << [username,password]
+          csv << [username, password]
         end
         puts "New login created"
       end

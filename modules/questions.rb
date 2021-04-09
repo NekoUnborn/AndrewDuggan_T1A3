@@ -21,24 +21,25 @@ def questions(username)
   questions.each do |cat, quest, meth|
     category = cat
     question = quest
-    answer = prompt.select("#{category}: #{question}", %w(y n))
+    answer = prompt.select("#{category}: #{question}", %w[y n])
     method = meth
     case method
     when "contact"
-      contact = check_contact
+      contact = check_contact(answer, contact)
+      p "#{contact} contact"
     when "support"
-      support = check_support
+      support = check_support(answer, support)
+      p "#{support} support"
     end
-    CSV.open("./saved_data/#{user}_answer.csv", "a+") do |csv|
+    CSV.open("./saved_data/#{user}_answers.csv", "a+") do |csv|
       csv << [category, question, method, answer]
     end
   end
 
   CSV.open("./saved_data/#{user}_states.csv", "w+") do |csv|
-    csv << [contact,support]
+    csv << [contact, support]
   end
 
   sleep 2
   system "clear"
-
 end

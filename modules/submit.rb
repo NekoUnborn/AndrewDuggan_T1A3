@@ -5,7 +5,7 @@ def submit(username)
   require 'tty-prompt'
   require 'dotenv/load'
   require_relative '../methods/user_methods'
-  require_relative './validate_input'
+  require_relative '../methods/validate_input'
 
   prompt = TTY::Prompt.new
 
@@ -35,12 +35,12 @@ def submit(username)
     # get the user's email address
     # email = validate_input("Your email address, please", "an email address")
     begin
-    RestClient.post "https://api:#{ENV[MY_API]}"\
-    "@api.mailgun.net/v3/#{ENV[DOMAIN_NAME]}/messages",
-                    from: "#{email}",
-                    to: "YOU@#{ENV[DOMAIN_NAME]}",
-                    subject: "Hello",
-                    text: "#{user_answers}"
+      RestClient.post "https://api:#{ENV[MY_API]}"\
+      "@api.mailgun.net/v3/#{ENV[DOMAIN_NAME]}/messages",
+                      from: email.to_s,
+                      to: "YOU@#{ENV[DOMAIN_NAME]}",
+                      subject: "Hello",
+                      text: user_answers.to_s
     rescue StandardError
       puts "Please email the #{user}_answer.csv file to us".colorize(:pink).blink
     end

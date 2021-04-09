@@ -19,7 +19,8 @@ def redo_questions(username)
     quit
   end
 
-  input = prompt.select("Which category of questions do you wish to change?", %w(critical high_intensity behave_of_concern communication move_mobility))
+  input = prompt.select("Which category of questions do you wish to change?",
+                        %w[critical high_intensity behave_of_concern communication move_mobility])
   File.delete("./saved_data/#{user}_answers.csv")
   user_file.each do |cat, quest, meth, ans|
     category = cat
@@ -27,9 +28,10 @@ def redo_questions(username)
     method = meth
     case input
     when category
-      answer = prompt.select("#{category}: #{question}", %w(y n))
+      answer = prompt.select("#{category}: #{question}", %w[y n])
     when !category
       answer = ans
+      p answer
     end
     case method
     when "contact"
@@ -38,16 +40,15 @@ def redo_questions(username)
       support = check_support(answer)
     end
 
-    CSV.open("./saved_data/#{user}_answer.csv", "a+") do |csv|
+    CSV.open("./saved_data/#{user}_answers.csv", "a+") do |csv|
       csv << [category, question, method, answer]
     end
   end
 
   CSV.open("./saved_data/#{user}_states.csv", "w+") do |csv|
-    csv << [contact,support]
+    csv << [contact, support]
   end
 
   sleep 2
   system "clear"
-
 end
