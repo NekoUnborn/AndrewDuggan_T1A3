@@ -9,16 +9,14 @@ def validate_input(variable, message)
   while input == ""
     print "#{variable}: "
     input = gets.chomp
-    if input == ""
-      puts "You must enter #{message}"
-    end
+    puts "You must enter #{message}" if input == ""
   end
-  return input
+  input
 end
 
 def find_user(username, users)
   users.each do |line|
     return line if line[0] == username
   end
-  return false
+  false
 end
