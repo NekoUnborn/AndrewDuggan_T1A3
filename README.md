@@ -1,11 +1,10 @@
 # Table of contents.
 1. Links
-1. Statement of purpose and scope
-1. Features
-
+2. Statement of purpose and scope
+3. Features
+5. Instructions
 
 # Links.
-
 [Link to GITHUB Repository](https://github.com/NekoUnborn/AndrewDuggan_T1A3)
 
 [Link to Trello Board](https://trello.com/b/mzhSDfv9)
@@ -129,4 +128,4 @@ The following Ruby Gems are required and will be installed by the install file:
 - gem "tty-markdown", "~> 0.7.0"
 
 ## Attribution
-
+I would like to thank the people that made the gems listed above.
