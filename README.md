@@ -2,7 +2,7 @@
 1. Links
 2. Statement of purpose and scope
 3. Features
-5. Instructions
+4. Instructions
 
 # Links.
 [Link to GITHUB Repository](https://github.com/NekoUnborn/AndrewDuggan_T1A3)
@@ -83,25 +83,6 @@ This feature will send an email (containing the users file) to the respite house
 
 Any errors from this process will prompt the user to take a copy of the save file to the interview.
 
-# Control Flow Diagrams
-## Main Program
-![Flowchart](../docs/main_program.png)
-
-## Validate_input feature
-![Flowchart](../docs/validate_input.png)
-
-## Login feature
-![Flowchart](../docs/login.png)
-
-## Questions Feature
-![Flowchart](../docs/questions.png)
-
-## Redo_Questions Feature
-![Flowchart](../docs/redo_questions.png)
-
-## Submission_Email Features
-![Flowchart](../docs/submit.png)
-
 # Instructions
 ## Installation
 - If you do not have ruby installed, follow [these instructions](https://www.ruby-lang.org/en/documentation/installation/) to install it.
@@ -116,6 +97,14 @@ git clone git@github.com:NekoUnborn/AndrewDuggan_T1A3.git
 - Run the application by the command:
 ```
 ./run_app.sh
+```
+- The instructions can be accessed by using the --help option:
+```
+ruby main.rb --help
+```
+or
+```
+./help.sh
 ```
 
 ## Dependencies
