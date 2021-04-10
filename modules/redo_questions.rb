@@ -31,7 +31,6 @@ def redo_questions(username)
       answer = prompt.select("#{category}: #{question}", %w[y n])
     when !category
       answer = ans
-      p answer
     end
     case method
     when "contact"
