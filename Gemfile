@@ -13,3 +13,5 @@ gem "mailgun-ruby", "~> 1.2"
 gem "dotenv", "~> 2.7"
 
 gem "csv", "~> 3.1"
+
+gem "tty-markdown", "~> 0.7.0"

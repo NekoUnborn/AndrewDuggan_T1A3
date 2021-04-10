@@ -1,6 +1,7 @@
 require "colorize"
 require "csv"
 require "tty-prompt"
+require "tty-markdown"
 require_relative "./modules/login"
 require_relative "./modules/questions"
 require_relative "./modules/redo_questions"
@@ -8,7 +9,8 @@ require_relative "./modules/submit"
 
 # ARGV's are an array
 if ARGV.include?("--help")
-  puts "README.md"
+  parsed = TTY::Markdown.parse_file('instructions.md')
+puts parsed
   exit
 end
 
