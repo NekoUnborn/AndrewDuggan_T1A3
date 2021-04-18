@@ -7,12 +7,13 @@ require_relative "./modules/questions"
 require_relative "./modules/redo_questions"
 require_relative "./modules/submit"
 
-# ARGV's are an array
-if ARGV.include?("--help")
+if ARGV.include?("--help" || "-h")
   parsed = TTY::Markdown.parse_file('instructions.md')
-puts parsed
+  puts parsed
   exit
 end
+
+
 
 # login_module # program will continue after logged in
 user, quit = login

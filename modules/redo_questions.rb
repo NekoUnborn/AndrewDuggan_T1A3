@@ -34,9 +34,9 @@ def redo_questions(username)
     end
     case method
     when "contact"
-      contact = check_contact(answer)
+      contact = check_contact(answer, contact)
     when "support"
-      support = check_support(answer)
+      support = check_support(answer, support)
     end
 
     CSV.open("./saved_data/#{user}_answers.csv", "a+") do |csv|

@@ -15,7 +15,7 @@ def submit(username)
     user_answers = CSV.parse(File.open("./saved_data/#{user}_answer.csv"))
     !quit
   rescue StandardError
-    puts "#{user}_answer.csv file is corrupt, please install again".colorize(:red).blink
+    puts "#{username}_answer.csv file is corrupt, please install again".colorize(:red).blink
     quit
   end
 
